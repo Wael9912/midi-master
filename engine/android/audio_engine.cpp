@@ -3,6 +3,9 @@
 #include "audio_engine.h"
 
 #include <android/log.h>
+
+#include "orgset.h"
+#include "sf2.h"
 #include <oboe/OboeExtensions.h>
 #include <time.h>
 #include <unistd.h>
@@ -40,7 +43,7 @@ bool AudioEngine::openStreamLocked() {
         stream_.reset();
         return false;
     }
-    synth_.prepare(static_cast<float>(stream_->getSampleRate()));
+    arranger_.prepare(static_cast<float>(stream_->getSampleRate()));
     tuner_ = std::make_unique<oboe::LatencyTuner>(*stream_);  // starts at 2 bursts, grows on underruns
     stream_->setPerformanceHintEnabled(true);                    // ADPF: ask the CPU governor to keep up
     const oboe::Result s = stream_->requestStart();
@@ -102,7 +105,9 @@ void AudioEngine::closeMidi() {
         AMidiDevice_release(midiDevice_);
         midiDevice_ = nullptr;
     }
-    commands_.push({Command::Kind::AllNotesOff});  // keys held on the unplugged keyboard must not hang
+    Command c;
+    c.kind = Command::Panic;  // keys held on the unplugged keyboard must not hang
+    send(c);
 }
 
 void AudioEngine::pollMidi() {
@@ -118,7 +123,7 @@ void AudioEngine::pollMidi() {
             const ssize_t got = AMidiOutputPort_receive(port, &opcode, buf, sizeof buf, &n, &ts);
             if (got <= 0) break;
             if (opcode != AMIDI_OPCODE_DATA || n == 0) continue;
-            synth_.handleBytes(buf, n);
+            arranger_.handleMidiBytes(buf, n);
             midiMessages_.fetch_add(1, std::memory_order_relaxed);
             if (ts > 0 && now >= ts) {
                 const long us = static_cast<long>((now - ts) / 1000);
@@ -141,17 +146,9 @@ oboe::DataCallbackResult AudioEngine::onAudioReady(oboe::AudioStream* stream, vo
     }
     if (tuner_) tuner_->tune();
     Command c;
-    while (commands_.pop(c)) {
-        switch (c.kind) {
-            case Command::Kind::NoteOn: synth_.noteOn(0, c.note, c.velocity); break;
-            case Command::Kind::NoteOff: synth_.noteOff(0, c.note); break;
-            case Command::Kind::AllNotesOff: synth_.allNotesOff(); break;
-            case Command::Kind::Gain: synth_.setMasterGain(c.value); break;
-        }
-    }
+    for (int guard = 0; guard < 1024 && commands_.pop(c); ++guard) arranger_.command(c);
     pollMidi();
-    synth_.render(static_cast<float*>(audioData), numFrames);
-    voices_.store(synth_.activeVoices(), std::memory_order_relaxed);
+    arranger_.render(static_cast<float*>(audioData), numFrames);
 
     const double budgetNs = 1e9 * numFrames / stream->getSampleRate();
     const int pct = static_cast<int>(100.0 * static_cast<double>(nowNs() - t0) / budgetNs);
@@ -176,13 +173,29 @@ void AudioEngine::stats(double out[kStatCount]) {
         auto x = stream_->getXRunCount();
         out[kXRuns] = x ? x.value() : -1;
     }
-    out[kVoices] = voices_.load();
+    out[kVoices] = arranger_.voicesState.load();
+    out[kDropped] = static_cast<double>(dropped_.load());
     out[kMidiMessages] = static_cast<double>(midiMessages_.load());
     const long cnt = handoffCount_.load();
     out[kHandoffAvgMs] = cnt ? handoffSumUs_.load() / 1000.0 / cnt : 0;
     out[kHandoffMaxMs] = handoffMaxUs_.load() / 1000.0;
     out[kRenderMaxPct] = renderMaxPct_.load();
     out[kMidiOpen] = midiPort_.load() ? 1 : 0;
+}
+
+}  // namespace mm
+
+namespace mm {
+
+void AudioEngine::drainRetired() {
+    Retired r;
+    while (arranger_.retired(r)) {
+        switch (r.kind) {
+            case Retired::Bank: delete static_cast<Sf2Bank*>(r.p); break;
+            case Retired::Org: delete static_cast<OrgSet*>(r.p); break;
+            case Retired::Style: delete static_cast<Style*>(r.p); break;
+        }
+    }
 }
 
 }  // namespace mm

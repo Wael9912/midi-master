@@ -1,25 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ميدي ماستر</string>
-    <string name="keyboard">الأورج</string>
-    <string name="no_keyboard">لم يتم العثور على أورج MIDI. وصّل الأورج بكابل USB OTG.</string>
-    <string name="connected">متصل</string>
-    <string name="tap_to_connect">اضغط للاتصال</string>
-    <string name="audio_path">مسار الصوت</string>
-    <string name="stream_off">الصوت لا يعمل</string>
-    <string name="sample_rate">معدل العينات</string>
-    <string name="burst">الدفعة</string>
-    <string name="buffer">المخزن المؤقت</string>
-    <string name="mode">الوضع</string>
-    <string name="output_latency">تأخير الإخراج (تقديري)</string>
-    <string name="midi_handoff">تسليم MIDI متوسط / أقصى</string>
-    <string name="cpu_peak">أقصى حمل للمعالج</string>
-    <string name="xruns">تقطعات</string>
-    <string name="voices">الأصوات</string>
-    <string name="midi_messages">رسائل MIDI</string>
-    <string name="reset_peaks">تصفير القمم</string>
-    <string name="volume">الصوت</string>
-    <string name="test_pads">أزرار التجربة</string>
-    <string name="all_notes_off">إيقاف كل النغمات</string>
-    <string name="sound_m1">الصوت: بيانو كهربائي تجريبي (M1)</string>
 </resources>

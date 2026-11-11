@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cmake -S engine -B build/engine -DCMAKE_BUILD_TYPE=Release && cmake --build build/engine -j
-      - run: ctest --test-dir build/engine --output-on-failure
+      - run: build/engine/mm_tests
   android:
     name: Android APK
     runs-on: ubuntu-latest
@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
+      # The build pins CMake 3.31.6 and NDK 29 (app/build.gradle.kts); the runner image has neither by default.
+      - run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "cmake;3.31.6" "ndk;29.0.14206865" > /dev/null
       - run: ./gradlew --no-daemon assembleDebug
       - uses: actions/upload-artifact@v4
         with:

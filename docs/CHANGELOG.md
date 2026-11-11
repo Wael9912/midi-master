@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.7.0 — 2026-11-11 · the whole arranger (milestones M2, M3, M4)
+- **A complete, playable app.** Rhythm and right-hand-sound pickers with ‹ › and full-screen searchable lists (the rhythm list has its own START). INTRO · A · B · FILL · END, START with the beat lights, tempo (♩. for 6/8), *start with first chord*, full chords / one finger, chord display, transpose. Under *More*: left-hand sound, left hand also sounds, layer, split point, the 8 setups (tap = load, hold = save), all notes off, show / hide keys. The keys (C3–C5, several fingers, glissando) stay pinned to the bottom and light up for the USB keyboard too. Arabic (RTL) and English, switched from the top bar.
+- **Settings:** SF2 / SF3 banks (files or a whole folder, each removable), Yamaha rhythm files (files or folders, grouped by folder, own files first), an ORG 24 set, *show built-in rhythms*, the sound of each rhythm part, track mutes, the mixer (keys, style, drums, reverb, master), keep the screen on, the *Audio path* card, About with every licence.
+- **The arranger runs in C++, inside the audio callback** (`engine/core/arranger.cpp`): split, layer, left hand, transpose, sustain and bend from the keyboard; the chord detector; the sequencer with no look-ahead, so a chord change applies to the very next note; note-offs scheduled per note. The web app's 200 ms look-ahead is gone.
+- **Ported and checked against the web engine** with fixtures dumped by `legacy-web/tools/dump_fixtures.mjs`:
+  - chord detection (3,000+ cases) and transposition (every note, rule and chord);
+  - the style DSL (all 12 built-in styles, event for event);
+  - the sequencer (27 scripted runs with fills, variations, mutes, chord changes and endings, note for note) and the 10,000-bar drift test;
+  - Yamaha `.sty` (SFF1, SFF2, C/D, source-root shifts, NTT bypass);
+  - ORG 24 `.Set` (the synthetic set and, locally, the owner's `Motaso.Set`: 27 instruments, 37 MB of PCM, identical to the web reader).
+- **Sounds:**
+  - **FluidR3Mono GM (v2.312, MIT) is bundled.** It is unpacked once from SF3 on the first start, with the phone's own Vorbis decoder on four threads, in about 47 s.
+  - A new SoundFont player (`engine/core/sf2*.cpp`), written from the SF2 spec: zones, envelopes, mod envelope, two LFOs, resonant filter, loops, exclusive classes, the velocity curve and cubic interpolation. Samples load per preset on a worker thread, so a 124 MB bank costs only the sounds in use. All 195 presets play, and the piano speaks within 1 ms. FluidSynth itself could not be built in this session's environment, so this player replaces it.
+  - The built-in voices and the Sudanese / GM drum kit, ported from `synth.js`. Key-part attacks are capped at 10 ms; every preset and drum is heard within 1 ms (tested at 44.1 / 48 / 96 kHz). The M1 FM piano is now the "Electric piano" preset.
+  - The ORG 24 sampler: nearest-root multisamples, loops, stereo samples, leading silence skipped.
+  - Reverb (8-line FDN) on a send, soft clip on the master, no look-ahead anywhere.
+- **Measured on the owner's phone with the YM-928** (adb, no owner task):
+  - stream 48 kHz, burst 96, buffer 192, exclusive · low-latency · MMAP;
+  - MIDI hand-off 1.1 ms on average (3.1 ms max), output latency 7.4–9.4 ms, 0 glitches;
+  - the engine benchmark run on the phone: a full style with chords and melody takes 34–43 µs per 96-frame callback on average (83 µs max) of a 2,000 µs budget.
+- No allocation on the audio path (tested with an allocation counter through whole style runs). Banks, sets and styles are swapped in with commands and freed off the audio thread.
+- CI: the Android job installs CMake 3.31.6 and NDK 29 (the 0.6.0 run failed on the missing CMake).
+- Not yet: maqam tuning and the instrument rack (M5, M6), a release APK on GitHub Releases.
+
 ## 0.6.0 — 2026-11-11 · native app, milestone M1 (first sound)
 - **Midi Master is now a native Android app** (owner decisions, `docs/PLAN_MIDI_MASTER.md` §0). Kotlin + Jetpack Compose UI, C++17 engine on **Oboe** (LowLatency, Exclusive, float, native rate, LatencyTuner, ADPF hint) with **AMidi read inside the audio callback**, so a key press never passes through Java/Kotlin. minSdk 29, package `io.github.wael9912.midimaster`.
 - M1 screen: the keyboard (auto-connects to the first USB MIDI device, reconnects on plug-in), an *Audio path* card (sample rate, burst, buffer, low-latency / exclusive / MMAP, output-latency estimate, MIDI hand-off avg/max, audio CPU peak, glitches, voices), volume, 8 test pads, all-notes-off. English + Arabic.

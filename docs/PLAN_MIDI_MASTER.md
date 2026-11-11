@@ -16,7 +16,7 @@ This section **overrides** §1, the web fixes in §2, and the WebView and JS-arr
 | D6 | **GitHub Releases only** (APK), no Play Store. |
 | — | No backup button. The owner keeps the original SF2 / Yamaha / ORG files and re-imports them and the 8 setups by hand. |
 | — | **No measurement tasks for the owner** (OboeTester and recordings were dropped as too complex). The owner judges latency **by ear once the app is complete**. Check the audio path yourself: the stream line in `adb logcat -s MidiMaster` and the *Audio path* card. |
-| — | **The next chat builds the whole app**: M2, M3 and M4 in one go, so the owner gets a complete, playable arranger. |
+| — | M2, M3 and M4 were built in one go (0.7.0, 2026-11-11): a complete, playable arranger. |
 
 **Layout:** a Gradle project at the repo root.
 - `app/`: Kotlin + Compose UI, file import (SAF), settings and setups storage, the JNI bridge.
@@ -29,9 +29,9 @@ This section **overrides** §1, the web fixes in §2, and the WebView and JS-arr
 
 **Milestones:**
 1. **M1, first sound (latency spike):** Oboe stream (LowLatency, Exclusive, float, native rate, 2 bursts) and AMidi polled in the callback. One fast-attack voice. A Compose screen with the MIDI device, the audio path facts (rate, burst, buffer, exclusive, latency estimate) and test pads. Host tests include the "first audible sample ≤ 1 ms after note-on" rule. **Done 2026-11-11 (0.6.0).**
-2. **M2, sounds:** FluidSynth with FluidR3Mono bundled, the `synth.js` voices ported, the ORG sampler, SF2 / ORG import.
-3. **M3, arranger:** `chord.js`, sequencer, `styledsl` / `styles` (Sudanese + Western set), `sty.js`, `orgset.js` in C++, tested against the JS fixtures.
-4. **M4, main screen in Compose:** the phone-first rules from the web app (two pickers, transport, keys pinned to the bottom, Arabic RTL + English, 8 setups).
+2. **M2, sounds:** FluidR3Mono bundled, the `synth.js` voices ported, the ORG sampler, SF2 / ORG import. **Done 2026-11-11 (0.7.0)**, with an own SF2 player (`engine/core/sf2*.cpp`) instead of FluidSynth, which could not be built in that session's environment; SF3 is converted once with Android's MediaCodec.
+3. **M3, arranger:** `chord.js`, sequencer, `styledsl` / `styles` (Sudanese + Western set), `sty.js`, `orgset.js` in C++, tested against the JS fixtures. **Done 2026-11-11 (0.7.0).**
+4. **M4, main screen in Compose:** the phone-first rules from the web app (two pickers, transport, keys pinned to the bottom, Arabic RTL + English, 8 setups). **Done 2026-11-11 (0.7.0).**
 5. **M5, rack** (§4). **M6, maqam tuning and Sudanese sounds** (§5).
 
 Web lessons that carry over as native rules:
@@ -41,7 +41,7 @@ Web lessons that carry over as native rules:
 - keep the stream open and warm while in front;
 - no look-ahead limiter on the master (soft clip).
 
-Next chat: read §0, then build M2 → M3 → M4 to a complete app the owner can play (the latest `docs/CHANGELOG.md` entry says where work stopped).
+Next: the owner plays 0.7.0 and judges it by ear; then a release APK on GitHub Releases, then M5 (rack) and M6 (maqam tuning, Sudanese sounds). The latest `docs/CHANGELOG.md` entry says where work stopped.
 
 ## Where the delay comes from
 

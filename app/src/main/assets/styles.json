@@ -1,0 +1,1428 @@
+[
+ {
+  "id": "tumtum",
+  "name": "Tum Tum",
+  "name_ar": "تم تم",
+  "group": "sudan",
+  "tempo": 156,
+  "meter": [
+   6,
+   8
+  ],
+  "voices": {
+   "upper": "lead",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "accordion",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "phrase": {
+    "role": "phrase",
+    "channel": 5,
+    "transpose": "chord",
+    "gate": 0.9
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "D": "x...x.......",
+     "T": "..x.........",
+     "M": "......x.x..."
+    },
+    "perc": {
+     "C": "x...x...x...",
+     "J": "x.x.x.x.x.x."
+    },
+    "bass": "C2 . . . C2 . G2 . G2 . . ."
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.....",
+     "D": "x...x.......",
+     "T": "..x.........",
+     "M": "......x.x..."
+    },
+    "perc": {
+     "C": "x...x...x...",
+     "J": "x.x.x.x.x.x.",
+     "W": "..x...x...x."
+    },
+    "bass": "C2 . . . C2 . G2 . G2 . . .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 . . . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.....",
+     "D": "x...x.....x.",
+     "T": "..x...x.....",
+     "M": "......x.x...",
+     "L": "......x....."
+    },
+    "perc": {
+     "C": "x...x...x...",
+     "J": "xxxxxxxxxxxx",
+     "W": "..x...x...x.",
+     "B": "x.....x....."
+    },
+    "bass": "C2 . . . C2 . G2 . G2 . B2 .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 .",
+    "phrase": "G4 . A4 . G4 . E4 . D4 . C4 . . . . . . . . . . . . E4 . G4 . A4 . G4 . . . . . . . . . . ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "D": "x...x...x.x.",
+     "T": "..x...x.x.x.",
+     "M": "......x.x.x."
+    },
+    "perc": {
+     "C": "x...x...x.x."
+    },
+    "bass": "C2 . . . C2 . G2 . A2 . B2 ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "D": "x.x.x.......",
+     "T": "......xxxxxx",
+     "M": "x.....x.x.x."
+    },
+    "perc": {
+     "C": "......x.x.x.",
+     "J": "x.x.x......."
+    },
+    "bass": "C2 . . . . . G2 . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "D": "x.....x.....",
+     "M": "x.....x.....",
+     "Z": "......x....."
+    },
+    "perc": {
+     "C": "x.....x....."
+    },
+    "bass": "G2 . . . . . C2:6",
+    "chord": ". . . . . . C3+E3+G3:6"
+   }
+  }
+ },
+ {
+  "id": "daloka",
+  "name": "Daloka · Sayra",
+  "name_ar": "دلوكة · سيرة",
+  "group": "sudan",
+  "tempo": 104,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "oud",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "accordion",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "D": "x.......x.x.....",
+     "T": "....x.x.....x.x."
+    },
+    "perc": {
+     "C": "....x.......x..."
+    }
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "D": "x.......x.x.....",
+     "T": "....x.x.....x.x.",
+     "M": "x.......x......."
+    },
+    "perc": {
+     "C": "....x.......x...",
+     "J": "x.x.x.x.x.x.x.x.",
+     "W": "..x...x...x...x."
+    },
+    "bass": "C2 . . . . . . . C2 . C2 . G2 . . .",
+    "chord": ". . . . C3+E3+G3 . . . . . . . C3+E3+G3 . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.......x.......",
+     "D": "x.......x.x...x.",
+     "T": "....x.x.....x.x.",
+     "M": "x.....x.x......."
+    },
+    "perc": {
+     "C": "....x.......x.x.",
+     "J": "xxxxxxxxxxxxxxxx",
+     "W": "..x...x...x...x.",
+     "B": "....x.......x..."
+    },
+    "bass": "C2 . . . . . . . C2 . C2 . G2 . B2 .",
+    "chord": ". . C3+E3+G3 . C3+E3+G3 . . . . . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "D": "x.......x.x.x.x.",
+     "T": "....x.x..x.x.x.x",
+     "M": "x.......x...x..."
+    },
+    "perc": {
+     "C": "....x...x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . C2 . D2 . E2 . G2 ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "D": "x.x.x.x.........",
+     "T": "........xxxxxxxx",
+     "M": "x.......x......."
+    },
+    "perc": {
+     "C": "........x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . G2 . . . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "D": "x...x...x.......",
+     "T": "..x...x.........",
+     "M": "x.......x.......",
+     "Z": "........x......."
+    },
+    "perc": {
+     "C": "x...x...x......."
+    },
+    "bass": "G2 . . . G2 . . . C2:8",
+    "chord": ". . . . . . . . C3+E3+G3:8"
+   }
+  }
+ },
+ {
+  "id": "mardoum",
+  "name": "Mardoum",
+  "name_ar": "مردوم",
+  "group": "sudan",
+  "tempo": 168,
+  "meter": [
+   6,
+   8
+  ],
+  "voices": {
+   "upper": "lead",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "oud",
+   "pad": "strings",
+   "phrase": "accordion"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "phrase": {
+    "role": "phrase",
+    "channel": 5,
+    "transpose": "chord",
+    "gate": 0.9
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "L": "x.....x.....",
+     "H": "..x.x...x.x."
+    },
+    "perc": {
+     "J": "x.x.xx.x.x.x",
+     "C": "x...x...x..."
+    }
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.....",
+     "L": "x.....x..x..",
+     "H": "..x.x...x.x.",
+     "D": "....x.....x."
+    },
+    "perc": {
+     "J": "x.x.xx.x.x.x",
+     "C": "x...x...x..."
+    },
+    "bass": "C2 . . . . . C2 . . G2 . .",
+    "chord": ". . C3+E3+G3 . C3+E3+G3 . . . C3+E3+G3 . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x...x.",
+     "L": "x.....x..x..",
+     "H": "..x.x...x.x.",
+     "D": "....x.....x.",
+     "M": "......x....."
+    },
+    "perc": {
+     "J": "x.x.xx.x.x.x",
+     "C": "x...x...x...",
+     "B": "x.....x.....",
+     "W": "..x...x...x."
+    },
+    "bass": "C2 . . . . . C2 . . G2 . B2",
+    "chord": ". . C3+E3+G3 . C3+E3+G3 . . . C3+E3+G3 . C3+E3+G3 .",
+    "phrase": "C4 . . . E4 . G4 . . A4 . G4 E4 . . . D4 . C4 . . . . ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "L": "x.....x.x.x.",
+     "H": "..x.x.x.x.x.",
+     "K": "x.....x....."
+    },
+    "perc": {
+     "C": "x...x...x.x."
+    },
+    "bass": "C2 . . . . . C2 . . G2 . ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "L": "x.x.x.......",
+     "H": "......xxxxxx",
+     "N": "......x.x.x."
+    },
+    "perc": {
+     "C": "......x.x.x."
+    },
+    "bass": "C2 . . . . . G2 . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "x.....x.....",
+     "L": "x.....x.....",
+     "Z": "......x....."
+    },
+    "perc": {
+     "C": "x.....x....."
+    },
+    "bass": "G2 . . . . . C2:6",
+    "chord": ". . . . . . C3+E3+G3:6"
+   }
+  }
+ },
+ {
+  "id": "jarari",
+  "name": "Jarari",
+  "name_ar": "جراري",
+  "group": "sudan",
+  "tempo": 114,
+  "meter": [
+   6,
+   8
+  ],
+  "voices": {
+   "upper": "oud",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "oud",
+   "pad": "strings",
+   "phrase": "flute"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "pad": {
+    "role": "pad",
+    "channel": 4,
+    "transpose": "chord",
+    "gate": 1
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "D": "x.....x.....",
+     "T": "..o.o...o..."
+    },
+    "perc": {
+     "C": "x.....x....."
+    },
+    "pad": "C3+E3+G3:12"
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "D": "x.....x.....",
+     "T": "..x.o...x.o.",
+     "M": "......x....."
+    },
+    "perc": {
+     "C": "x.....x.....",
+     "J": "o.o.o.o.o.o."
+    },
+    "bass": "C2:6 . . . . . G2:6 . . . . .",
+    "chord": ". . C3+E3 . . . . . C3+E3 . . .",
+    "pad": "C3+E3+G3:12"
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "D": "x.....x...x.",
+     "T": "..x.o...x.o.",
+     "M": "......x....."
+    },
+    "perc": {
+     "C": "x.....x.....",
+     "J": "o.o.o.o.o.o.",
+     "W": "....x.....x."
+    },
+    "bass": "C2:6 . . . . . G2:3 . . B1:3 . .",
+    "chord": ". . C3+E3 . G3 . . . C3+E3 . G3 .",
+    "pad": "C3+E3+G3:12"
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "D": "x.....x.x.x.",
+     "T": "..x.o.x.x.x."
+    },
+    "perc": {
+     "C": "x.....x.x.x."
+    },
+    "bass": "C2:6 . . . . . G2:6",
+    "pad": "C3+E3+G3:12"
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "D": "x.x.x.......",
+     "T": "......x.x.x.",
+     "M": "......x....."
+    },
+    "perc": {
+     "C": "......x.x.x."
+    },
+    "bass": "C2:6 . . . . . G2:6",
+    "pad": "C3+E3+G3:12"
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "D": "x.....x.....",
+     "M": "x.....x.....",
+     "Z": "......x....."
+    },
+    "bass": "G2:6 . . . . . C2:6",
+    "chord": ". . . . . . C3+E3+G3:6",
+    "pad": "C3+E3+G3:12"
+   }
+  }
+ },
+ {
+  "id": "karachi",
+  "name": "Karachi",
+  "name_ar": "كراتشي",
+  "group": "sudan",
+  "tempo": 126,
+  "meter": [
+   2,
+   4
+  ],
+  "voices": {
+   "upper": "accordion",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "accordion",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 2,
+    "drums": {
+     "T": "x.x.....",
+     "D": "....x..."
+    },
+    "perc": {
+     "J": "x.x.x.x."
+    }
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "T": "x.x.....",
+     "D": "....x...",
+     "M": "....x..."
+    },
+    "perc": {
+     "J": "x.x.x.x.",
+     "C": "....x..."
+    },
+    "bass": "C2 . . . G2 . . .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "....x...",
+     "T": "x.x...x.",
+     "D": "....x...",
+     "M": "....x..."
+    },
+    "perc": {
+     "J": "xxxxxxxx",
+     "C": "....x...",
+     "W": "..x...x."
+    },
+    "bass": "C2 . . . G2 . B2 .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "T": "x.x.x.x.",
+     "D": "....x.x."
+    },
+    "perc": {
+     "C": "....x.x."
+    },
+    "bass": "C2 . . . G2 . A2 ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "T": "xxxx....",
+     "D": "....xxxx"
+    },
+    "perc": {
+     "C": "....x.x."
+    },
+    "bass": "C2 . . . G2 . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "T": "x.x.....",
+     "D": "....x...",
+     "Z": "....x..."
+    },
+    "bass": "G2 . . . C2:4",
+    "chord": ". . . . C3+E3+G3:4"
+   }
+  }
+ },
+ {
+  "id": "dalib",
+  "name": "Dalib",
+  "name_ar": "دليب",
+  "group": "sudan",
+  "tempo": 96,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "tambour",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "oud",
+   "pad": "strings",
+   "phrase": "tambour"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "phrase": {
+    "role": "phrase",
+    "channel": 5,
+    "transpose": "chord",
+    "gate": 0.9
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "D": "x.......x.......",
+     "T": "....x.x.....x..."
+    },
+    "perc": {
+     "C": "....x.......x..."
+    },
+    "phrase": "C4 . E4 . G4 . A4 . G4 . E4 . D4 . C4 ."
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "D": "x.......x.......",
+     "T": "....x.x.....x...",
+     "M": "......x.......x."
+    },
+    "perc": {
+     "C": "....x.......x...",
+     "J": "x.x.x.x.x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . C2 . . . G2 . . .",
+    "chord": ". . . . C3+E3+G3 . . . . . . . C3+E3+G3 . . .",
+    "phrase": "C4 . E4 . G4 . A4 . G4 . E4 . D4 . C4 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.......x.......",
+     "D": "x.......x.....x.",
+     "T": "....x.x.....x.x.",
+     "M": "......x.......x."
+    },
+    "perc": {
+     "C": "....x.......x...",
+     "J": "xxxxxxxxxxxxxxxx",
+     "W": "..x...x...x...x."
+    },
+    "bass": "C2 . . . . . C2 . C2 . . . G2 . B2 .",
+    "chord": ". . C3+E3+G3 . C3+E3+G3 . . . . . C3+E3+G3 . C3+E3+G3 . . .",
+    "phrase": "C4 . E4 . G4 A4 G4 . E4 . D4 . C4 . . ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "D": "x.......x.x.x.x.",
+     "T": "....x.x..x.x.x.x"
+    },
+    "perc": {
+     "C": "....x...x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . C2 . D2 . E2 . G2 ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "D": "x.x.x.x.........",
+     "T": "........xxxxxxxx",
+     "M": "........x...x..."
+    },
+    "perc": {
+     "C": "........x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . G2 . . . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "D": "x...x...x.......",
+     "T": "..x...x.........",
+     "Z": "........x......."
+    },
+    "perc": {
+     "C": "x...x...x......."
+    },
+    "bass": "G2 . . . G2 . . . C2:8",
+    "chord": ". . . . . . . . C3+E3+G3:8",
+    "phrase": "G4 . E4 . D4 . . . C4:8"
+   }
+  }
+ },
+ {
+  "id": "haqiba",
+  "name": "Haqiba",
+  "name_ar": "حقيبة",
+  "group": "sudan",
+  "tempo": 88,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "oud",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "oud",
+   "pad": "strings",
+   "phrase": "flute"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "pad": {
+    "role": "pad",
+    "channel": 4,
+    "transpose": "chord",
+    "gate": 1
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "perc": {
+     "R": "X.x.x.x.X.x.x.x.",
+     "C": "....o.......o..."
+    },
+    "pad": "C3+E3+G3:16"
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "D": "o.......o.......",
+     "T": "....o.......o..."
+    },
+    "perc": {
+     "R": "X.x.x.x.X.x.x.x.",
+     "C": "....x.......x..."
+    },
+    "bass": "C2 . . . . . . . G2 . . . . . . . C2 . . . . . . . G2 . . . E2 . . .",
+    "chord": "C3 . E3 . G3 . E3 . C3 . E3 . G3 . E3 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "D": "o.......o...o...",
+     "T": "....o.......o.o."
+    },
+    "perc": {
+     "R": "X.x.x.x.X.x.x.x.",
+     "C": "....x.......x...",
+     "J": "o.o.o.o.o.o.o.o."
+    },
+    "bass": "C2 . . . . . . . G2 . . . B1 . . . C2 . . . . . . . G2 . . . E2 . D2 .",
+    "chord": "C3+E3 . G3 . C3+E3 . G3 . C3+E3 . G3 . C3+E3 . G3 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "D": "o...o...x.x.x.x."
+    },
+    "perc": {
+     "R": "X.x.x.x.xxxxxxxx",
+     "C": "....o...x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . G2 . . . B1 . D2 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "D": "x.x.x.x.........",
+     "T": "........x.x.x.x."
+    },
+    "perc": {
+     "R": "........xxxxxxxx",
+     "C": "........x.x.x.x."
+    },
+    "bass": "C2 . . . . . . . G2 . . . . . . .",
+    "pad": "C3+E3+G3:16"
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "D": "x.......x.......",
+     "Z": "........x......."
+    },
+    "perc": {
+     "R": "X.x.x...x......."
+    },
+    "bass": "G2 . . . G2 . . . C2:8",
+    "chord": "C3 . E3 . G3 . . . C3+E3+G3:8",
+    "pad": "C3+E3+G3:16"
+   }
+  }
+ },
+ {
+  "id": "pop",
+  "name": "Pop",
+  "name_ar": "بوب",
+  "group": "west",
+  "tempo": 120,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "piano",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "piano",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "pad": {
+    "role": "pad",
+    "channel": 4,
+    "transpose": "chord",
+    "gate": 1
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "S": "x.x.x.x.x.x.x.x.",
+     "A": "............xxxx"
+    },
+    "pad": "C3+E3+G3:16"
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.x.......",
+     "A": "....x.......x...",
+     "S": "x.x.x.x.x.x.x.x."
+    },
+    "bass": "C2 . . . C2 . C2 . C2 . . . G2 . . .",
+    "chord": "C3+E3+G3 . . C3+E3+G3 . . C3+E3+G3 . . . C3+E3+G3 . . . . .",
+    "pad": "C3+E3+G3:16"
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.x.....x.",
+     "A": "....x.......x...",
+     "S": "x.x.x.x.x.x.x.x.",
+     "O": "..............x."
+    },
+    "bass": "C2 . . . C2 . C2 . C2 . . . G2 . B2 .",
+    "chord": "C3+E3+G3 . . C3+E3+G3 . . C3+E3+G3 . . C3+E3+G3 . . C3+E3+G3 . . .",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "K": "x.....x.x.......",
+     "A": "....x...x.x.x.x.",
+     "S": "x.x.x.x.x.x.x.x."
+    },
+    "bass": "C2 . . . C2 . C2 . C2 . . . . . . .",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "A": "....x...xxxxxxxx",
+     "N": "........x.x.x.x."
+    },
+    "bass": "C2 . . . C2 . . . C2 . . . . . . .",
+    "pad": "C3+E3+G3:16"
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "x...x...x.......",
+     "A": "..x...x.........",
+     "Z": "........x......."
+    },
+    "bass": "C2 . . . G2 . . . C2:8",
+    "chord": ". . . . . . . . C3+E3+G3:8",
+    "pad": "C3+E3+G3:16"
+   }
+  }
+ },
+ {
+  "id": "rock",
+  "name": "Rock",
+  "name_ar": "روك",
+  "group": "west",
+  "tempo": 128,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "lead",
+   "lower": "organ",
+   "bass": "bass",
+   "chord": "organ",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "S": "x.x.x.x.x.x.x.x.",
+     "A": "........x.x.xxxx"
+    }
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x...x.....",
+     "A": "....x.......x...",
+     "S": "x.x.x.x.x.x.x.x."
+    },
+    "bass": "C2 . C2 . C2 . C2 . C2 . C2 . C2 . C2 .",
+    "chord": "C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.x.x.....",
+     "A": "....x.......x...",
+     "O": "x.x.x.x.x.x.x.x.",
+     "Z": "x..............."
+    },
+    "bass": "C2 . C2 . C2 . C2 . C2 . C2 . G2 . B2 .",
+    "chord": "C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 . C3+E3+G3 ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "K": "x.....x.........",
+     "A": "....x...x.x.x.x.",
+     "N": ".........x.x.x.x"
+    },
+    "bass": "C2 . C2 . C2 . C2 . C2 . . . . . . ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "A": "....xxxxxxxx....",
+     "N": "............xxxx"
+    },
+    "bass": "C2 . C2 . C2 . . . . . . . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "x...x...x.......",
+     "A": "..x...x.........",
+     "Z": "........x......."
+    },
+    "bass": "C2 . . . G2 . . . C2:8",
+    "chord": ". . . . . . . . C3+E3+G3:8"
+   }
+  }
+ },
+ {
+  "id": "ballad",
+  "name": "Ballad",
+  "name_ar": "بالاد",
+  "group": "west",
+  "tempo": 72,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "piano",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "piano",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "pad": {
+    "role": "pad",
+    "channel": 4,
+    "transpose": "chord",
+    "gate": 1
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "S": "o.o.o.o.o.o.o.o."
+    },
+    "chord": "C3 . E3 . G3 . C4 . G3 . E3 . C3 . E3 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x.......x.x.....",
+     "A": "....x.......x...",
+     "S": "o.o.o.o.o.o.o.o."
+    },
+    "bass": "C2:8 . . . . . . . G2:4 . . . E2:4 . . .",
+    "chord": "C3 . E3 . G3 . C4 . G3 . E3 . C3 . E3 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.......x.x.....",
+     "A": "....x.......x...",
+     "S": "o.o.o.o.o.o.o.o.",
+     "O": "..............o."
+    },
+    "bass": "C2:4 . . . C2:4 . . . G2:4 . . . B1:2 . D2:2 .",
+    "chord": "C3+E3 . G3 . C4+E4 . G3 . C3+E3 . G3 . C4+E4 . G3 .",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "A": "....x...x.x.x.x.",
+     "S": "o.o.o.o.o.o.o.o."
+    },
+    "bass": "C2:8 . . . . . . . G2:8",
+    "pad": "C3+E3+G3:16"
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "A": "....x.....xx..xx",
+     "N": "........x.x.x..."
+    },
+    "bass": "C2:8 . . . . . . . C2:8",
+    "pad": "C3+E3+G3:16"
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "Z": "........x......."
+    },
+    "bass": "G2:8 . . . . . . . C2:8",
+    "chord": "G3 . B3 . D4 . . . C3+E3+G3:8",
+    "pad": "C3+E3+G3:16"
+   }
+  }
+ },
+ {
+  "id": "reggae",
+  "name": "Reggae",
+  "name_ar": "ريغي",
+  "group": "west",
+  "tempo": 80,
+  "meter": [
+   4,
+   4
+  ],
+  "voices": {
+   "upper": "organ",
+   "lower": "organ",
+   "bass": "bass",
+   "chord": "organ",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "perc": {
+    "role": "perc",
+    "channel": 10,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "R": "x.x.x.x.x.x.x.x.",
+     "A": "............xxxx"
+    }
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "........x.......",
+     "A": "........x.......",
+     "S": "x.x.x.x.x.x.x.x.",
+     "R": "....x.......x..."
+    },
+    "perc": {
+     "J": "..x...x...x...x."
+    },
+    "bass": "C2 . . . . . C2 . . . G1 . . . . . C2 . . . . . C2 . . . G1 . B1 . . .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 . . . C3+E3+G3 . . . C3+E3+G3 ."
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "........x.......",
+     "A": "........x.......",
+     "S": "x.x.x.x.x.x.x.x.",
+     "R": "....x.......x...",
+     "O": "..............x."
+    },
+    "perc": {
+     "J": "..x...x...x...x.",
+     "B": "....x.......x..."
+    },
+    "bass": "C2 . . . . . C2 . . . G1 . . . . . C2 . . . . . C2 . . . G1 . B1 . D2 .",
+    "chord": ". . C3+E3+G3 . . . C3+E3+G3 . . . C3+E3+G3 . . . C3+E3+G3 ."
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "K": "........x.......",
+     "A": "....x...x.x.x.x.",
+     "S": "x.x.x.x.x.x.x.x."
+    },
+    "bass": "C2 . . . . . C2 . . . G1 . . . . ."
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "K": "x.......x.......",
+     "A": "..x.x...xxxx....",
+     "N": "............xxxx"
+    },
+    "bass": "C2 . . . . . C2 . . . . . . . . ."
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "........x.......",
+     "A": "........x.......",
+     "Z": "........x......."
+    },
+    "bass": "G1 . . . . . . . C2:8",
+    "chord": ". . G3+B3+D4 . . . . . C3+E3+G3:8"
+   }
+  }
+ },
+ {
+  "id": "six8",
+  "name": "Slow 6/8",
+  "name_ar": "٦/٨ هادئ",
+  "group": "west",
+  "tempo": 96,
+  "meter": [
+   6,
+   8
+  ],
+  "voices": {
+   "upper": "piano",
+   "lower": "strings",
+   "bass": "bass",
+   "chord": "piano",
+   "pad": "strings",
+   "phrase": "lead"
+  },
+  "tracks": {
+   "drums": {
+    "role": "drums",
+    "channel": 9,
+    "transpose": "none"
+   },
+   "bass": {
+    "role": "bass",
+    "channel": 2,
+    "transpose": "chord",
+    "gate": 0.8
+   },
+   "chord": {
+    "role": "chord",
+    "channel": 3,
+    "transpose": "chord",
+    "gate": 0.85
+   },
+   "pad": {
+    "role": "pad",
+    "channel": 4,
+    "transpose": "chord",
+    "gate": 1
+   }
+  },
+  "parts": {
+   "intro": {
+    "bars": 1,
+    "drums": {
+     "S": "x.x.x.x.x.x."
+    },
+    "chord": "C3 . E3 . G3 . C4 . G3 . E3 .",
+    "pad": "C3+E3+G3:12"
+   },
+   "mainA": {
+    "bars": 2,
+    "drums": {
+     "K": "x...........",
+     "A": "......x.....",
+     "S": "x.x.x.x.x.x."
+    },
+    "bass": "C2:6 . . . . . G2:6 . . . . .",
+    "chord": "C3 . E3 . G3 . C4 . G3 . E3 .",
+    "pad": "C3+E3+G3:12"
+   },
+   "mainB": {
+    "bars": 2,
+    "drums": {
+     "K": "x.....x.x...",
+     "A": "......x.....",
+     "S": "x.x.x.x.x.x.",
+     "O": "..........x."
+    },
+    "bass": "C2:6 . . . . . G2:3 . . B1:3 . .",
+    "chord": "C3+E3 . G3 . C4+E4 . G3 . E3 . G3 .",
+    "pad": "C3+E3+G3:12"
+   },
+   "fillA": {
+    "bars": 1,
+    "drums": {
+     "K": "x...........",
+     "A": "......x.x.x.",
+     "S": "x.x.x.x.x.x."
+    },
+    "bass": "C2:6 . . . . . G2:6",
+    "pad": "C3+E3+G3:12"
+   },
+   "fillB": {
+    "bars": 1,
+    "drums": {
+     "K": "x.....x.....",
+     "A": "..x.x.xxxxxx",
+     "N": "......x.x.x."
+    },
+    "bass": "C2:6 . . . . . C2:6",
+    "pad": "C3+E3+G3:12"
+   },
+   "ending": {
+    "bars": 1,
+    "drums": {
+     "K": "x.....x.....",
+     "Z": "......x....."
+    },
+    "bass": "G2:6 . . . . . C2:6",
+    "chord": "G3 . B3 . D4 . C3+E3+G3:6",
+    "pad": "C3+E3+G3:12"
+   }
+  }
+ }
+]

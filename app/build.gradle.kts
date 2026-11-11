@@ -16,8 +16,8 @@ android {
         // AMidi (native MIDI) needs Android 10 (API 29).
         minSdk = 29
         targetSdk = 36
-        versionCode = 60
-        versionName = "0.6.0"
+        versionCode = 70
+        versionName = "0.7.0"
         // The owner's phone (Nothing Phone 3a) is arm64; x86_64 keeps the emulator usable.
         ndk { abiFilters += listOf("arm64-v8a", "x86_64") }
         externalNativeBuild {
@@ -56,6 +56,8 @@ android {
     packaging {
         jniLibs { useLegacyPackaging = false }
     }
+    // The bundled SF3 is already compressed (Ogg Vorbis): store it as is.
+    androidResources { noCompress += listOf("sf3") }
 }
 
 kotlin {
