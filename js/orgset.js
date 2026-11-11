@@ -1,4 +1,4 @@
-// ORG 24 / Sofeh Music Studio ".Set" reader → Daloka styles + sampled instruments.
+// ORG 24 / Sofeh Music Studio ".Set" reader → Midi Master styles + sampled instruments.
 // Pure logic, no browser APIs (node runs it in the tests).
 //
 // Reverse-engineered 2026-10-20 from two sets (format versions 1.2.8 and 1.4.6):
@@ -192,7 +192,7 @@ const PART_SETS = [
 ];
 
 /**
- * Compiled Daloka styles from a parsed set. meter: [6, 8] (1000 ticks = one bar, triplet feel) by default.
+ * Compiled Midi Master styles from a parsed set. meter: [6, 8] (1000 ticks = one bar, triplet feel) by default.
  * Pitched tracks are played as written (the set's own key) and re-mapped by the chord with 'chord'.
  */
 export function orgStyles(parsed, { id = 'org', name = 'ORG set', meter = [6, 8], tempo = 100, instrumentChoice = null } = {}) {

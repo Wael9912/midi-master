@@ -1,6 +1,6 @@
-# Daloka — Sudanese arranger keyboard in the browser
+# Midi Master — Sudanese arranger keyboard in the browser
 
-**دلوكة** turns a USB-MIDI keyboard (first target: the YM928) plugged into an Android phone into a Sudanese and Western arranger keyboard. It is a plain web app: no install step, no app store, no build tools, no dependencies. It works offline once opened, and can be installed to the home screen as a PWA.
+**Midi Master** (ميدي ماستر, formerly *Daloka*) turns a USB-MIDI keyboard (first target: the YM928) plugged into an Android phone into a Sudanese and Western arranger keyboard. It is a plain web app: no install step, no app store, no build tools, no dependencies. It works offline once opened, and can be installed to the home screen as a PWA.
 
 - **Sound module:** a built-in synth (oud, tambour, accordion, sax, strings, brass, piano, organ, bass, lead, flute) and a Sudanese percussion kit; import any `.sf2` sound bank for real sampled instruments.
 - **Arranger:** the left hand (below the split point) plays chords; drums, percussion, bass, chord and pad parts follow them.
@@ -76,7 +76,7 @@ node tests/run.mjs    # engine tests: chord detection ×12 keys, DSL, the Sudane
 
 Files: `index.html`, `css/app.css`, `js/` (`app.js` UI · `sheet.js` the list sheet · `catalog.js` list order, grouping, search · `engine.js` routing over the loaded banks · `synth.js` built-in sounds · `sf2.js` SoundFont loader · `sty.js` Yamaha styles · `orgset.js` + `orgsampler.js` ORG 24 sets · `sequencer.js` · `chord.js` · `styledsl.js` · `styles.js` · `midi.js` · `audio.js` · `store.js` · `i18n.js`), `sw.js` + `manifest.webmanifest` (PWA).
 
-Latency: Chrome on Android with `latencyHint: 'interactive'` gives roughly 20–40 ms key-to-sound on a mid-range phone, worse on cheap phones. A native app (the original plan, `docs/PLAN.md`) is the path to under 20 ms if that ever matters more than zero-install.
+Latency: Chrome on Android gives roughly 20–35 ms key-to-sound on a good phone with the phone speaker or a cable, worse on cheap phones. A **Bluetooth speaker adds 100–300 ms** that no app can remove: use a cable (a powered USB-C hub with a headphone jack, into the keyboard's audio input or a powered speaker). The road to under 15 ms (a native Android engine) and to several virtual instruments in one app is in `docs/PLAN_MIDI_MASTER.md`; the findings behind it are in `docs/RESEARCH_2026-11.md`.
 
 ## License
 

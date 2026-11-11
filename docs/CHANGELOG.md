@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.1 — 2026-11-11
+- **Renamed to Midi Master** (ميدي ماستر): title, home-screen name, start screen, install help, messages, one-file bundles (`dist/midi-master*.html`). Saved setups, banks and rhythm files carry over (the storage names did not change). The Sudanese rhythm *Daloka · Sayra* keeps its name.
+
 ## 0.5.0 — 2026-10-22
 - **The screen rebuilt for a phone.** Two pickers at the top of the screen: *Rhythm* and *Right-hand sound*, each with ‹ › arrows to step and a tap on the name to open a full-screen list (`js/sheet.js`): search box, group headers, the current item marked, and a tap picks while the list stays open so several can be tried in a row; the rhythm list carries its own START/STOP. The keyboard is pinned to the bottom; the panels above it scroll if they must. Transport: INTRO · A · B · FILL · END on one row, START with the beat lights inside it, tempo beside it. Chord and transpose below; split point, left-hand sound, layer, setups under *More*. Two columns on a tablet, a short layout in landscape.
 - **Your rhythm files come first.** Imported Yamaha styles head the rhythm list, grouped by folder (Settings → *Add a folder of rhythms* takes a whole folder; non-style files are skipped), then the ORG set, then the built-in Sudanese and Western sets, which can be hidden (*Show built-in rhythms*). Order and grouping in `js/catalog.js`.

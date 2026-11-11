@@ -1,4 +1,4 @@
-// Daloka — app controller. Wires MIDI/screen keys → chord zone + voices,
+// Midi Master — app controller. Wires MIDI/screen keys → chord zone + voices,
 // the sequencer transport, the two pickers (rhythm, sound), setups
 // (registrations), imports and the UI.
 
@@ -16,7 +16,7 @@ import { ListSheet } from './sheet.js';
 import { t } from './i18n.js';
 import * as store from './store.js';
 
-export const VERSION = '0.5.0';
+export const VERSION = '0.5.1';
 
 // GM programs to prefer for each built-in voice name when an SF2 is loaded.
 const GM_FOR = { piano: 0, organ: 16, accordion: 21, oud: 24, tambour: 105, strings: 48, brass: 61, sax: 65, flute: 73, bass: 33, lead: 81 };

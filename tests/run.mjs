@@ -196,7 +196,7 @@ function makeSty({ root = 0, ntt = 1 } = {}) {
   eq(casm.parts, ['Main A'], 'sty: Sdec parts');
   eq([casm.ctabs[10].dest, casm.ctabs[10].ntt, casm.ctabs[11].ntt], [10, 1, 2], 'sty: Ctab dest + NTT');
   const [st] = convertStyle(bytes, { id: 'sty:test', name: 'Test' });
-  eq(Object.keys(st.parts).sort(), ['ending', 'fillA', 'fillB', 'intro', 'mainA', 'mainB'], 'sty: all six Daloka parts exist');
+  eq(Object.keys(st.parts).sort(), ['ending', 'fillA', 'fillB', 'intro', 'mainA', 'mainB'], 'sty: all six arranger parts exist');
   eq(st.parts.mainA.bars, 1, 'sty: Main A = 1 bar');
   eq(st.parts.mainB.events.length, st.parts.mainA.events.length, 'sty: missing Main B falls back to Main A');
   eq(st.parts.fillA.events.map((e) => e.n), [38], 'sty: Fill In AA → fillA');
@@ -207,7 +207,7 @@ function makeSty({ root = 0, ntt = 1 } = {}) {
   eq(bass, [[0, 36], [2, 43]], 'sty: bass notes on beats 1 and 3, ticks → beats');
   eq(st.tracks.drums.transpose, 'none', 'sty: rhythm channel is never transposed');
   eq(st.tracks.bass.transpose, 'chord', 'sty: bass follows the chord');
-  eq(st.gmPrograms, { 2: 33, 3: 21 }, 'sty: GM programs land on Daloka channels');
+  eq(st.gmPrograms, { 2: 33, 3: 21 }, 'sty: GM programs land on the arranger channels');
   ok(!st.tracks.pad && !st.tracks.phrase, 'sty: silent channels are dropped');
   // Recorded over F (root 5): the pattern is shifted back to C before the chord re-map.
   const [stF] = convertStyle(makeSty({ root: 5 }), { id: 'f', name: 'F' });

@@ -1,4 +1,4 @@
-// Yamaha style file (.sty / .prs / .sst, SFF1 and SFF2) → a compiled Daloka style.
+// Yamaha style file (.sty / .prs / .sst, SFF1 and SFF2) → a compiled Midi Master style.
 // Pure logic, no browser APIs (runs under node for the tests).
 //
 // A style file is a Standard MIDI File type 0 whose single track is cut into
@@ -8,7 +8,7 @@
 // recorded over (root + type), the Note Transposition Rule and Table.
 // Reference: jososoft.dk "Style CASM Section Format" + "CASM Format 1 / 2".
 //
-// Mapping to Daloka: destination channels 9–16 (0-based 8–15) are
+// Mapping to Midi Master: destination channels 9–16 (0-based 8–15) are
 //   8 rhythm sub → perc (10), 9 rhythm main → drums (9), 10 bass → 2,
 //   11 chord 1 → 3, 12 chord 2 → 6, 13 pad → 4, 14 phrase 1 → 5, 15 phrase 2 → 7.
 // Notes are shifted so the pattern reads over C, then the sequencer re-maps them
@@ -130,7 +130,7 @@ export function parseCASM(bytes, midiEnd, sff2, partName = 'Main A') {
   return first;
 }
 
-// Yamaha part name → Daloka part, for the A/B pair and the C/D pair.
+// Yamaha part name → Midi Master part, for the A/B pair and the C/D pair.
 const PART_MAP = {
   ab: { intro: ['Intro A', 'Intro B', 'Intro C'], mainA: ['Main A'], mainB: ['Main B', 'Main A'], fillA: ['Fill In AA', 'Fill In AB'], fillB: ['Fill In BB', 'Fill In BA', 'Fill In AA'], ending: ['Ending A', 'Ending B', 'Ending C'] },
   cd: { intro: ['Intro B', 'Intro C', 'Intro A'], mainA: ['Main C'], mainB: ['Main D', 'Main C'], fillA: ['Fill In CC'], fillB: ['Fill In DD', 'Fill In CC'], ending: ['Ending B', 'Ending C', 'Ending A'] },
@@ -145,7 +145,7 @@ function sectionsOf(smf) {
 }
 
 /**
- * Convert a parsed style file into one or two compiled Daloka styles
+ * Convert a parsed style file into one or two compiled Midi Master styles
  * ({ id, name, tempo, meter, tracks, parts: { bars, beats, events } }).
  */
 export function convertStyle(bytes, { id = 'sty', name = 'Style' } = {}) {

@@ -1,6 +1,6 @@
 {
-  "name": "Daloka — Sudanese arranger keyboard",
-  "short_name": "Daloka",
+  "name": "Midi Master — Sudanese arranger keyboard",
+  "short_name": "Midi Master",
   "description": "Turn a USB-MIDI keyboard into a Sudanese and Western arranger. Offline, free, open source.",
   "start_url": "./",
   "scope": "./",

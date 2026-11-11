@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bundle the app into ONE self-contained HTML file (dist/daloka.html).
+"""Bundle the app into ONE self-contained HTML file (dist/midi-master.html).
 
 Use it to share the app as a single file (WhatsApp, Telegram, a Claude artifact)
 or to open it from the phone's file manager. The modules are concatenated in
@@ -7,8 +7,8 @@ dependency order with their import/export lines stripped; CSS and icons are
 inlined. The service worker and manifest are left out (a single file has no
 origin to install into), everything else is identical to the served app.
 
-    python3 tools/build_single.py            # → dist/daloka.html
-    python3 tools/build_single.py --artifact # → dist/daloka-artifact.html (no <html>/<head>/<body>, for claude.ai)
+    python3 tools/build_single.py            # → dist/midi-master.html
+    python3 tools/build_single.py --artifact # → dist/midi-master-artifact.html (no <html>/<head>/<body>, for claude.ai)
 """
 import base64, re, sys, pathlib
 
@@ -49,9 +49,9 @@ if artifact:
     head = re.sub(r'\s*<meta name="viewport"[^>]*>', '', head)
     head = re.sub(r'\s*<meta charset="utf-8">', '', head)
     page = head.strip() + '\n' + body.strip() + '\n'
-    path = out / 'daloka-artifact.html'
+    path = out / 'midi-master-artifact.html'
 else:
     page = html
-    path = out / 'daloka.html'
+    path = out / 'midi-master.html'
 path.write_text(page)
 print(f'{path} ({len(page.encode()) // 1024} KB)')
