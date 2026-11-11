@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Midi Master</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="no_keyboard">No MIDI keyboard found. Plug the keyboard in with the USB OTG cable.</string>
+    <string name="connected">Connected</string>
+    <string name="tap_to_connect">Tap to connect</string>
+    <string name="audio_path">Audio path</string>
+    <string name="stream_off">Audio stream is not running</string>
+    <string name="sample_rate">Sample rate</string>
+    <string name="burst">Burst</string>
+    <string name="buffer">Buffer</string>
+    <string name="mode">Mode</string>
+    <string name="output_latency">Output latency (estimate)</string>
+    <string name="midi_handoff">MIDI hand-off avg / max</string>
+    <string name="cpu_peak">Audio CPU peak</string>
+    <string name="xruns">Glitches (underruns)</string>
+    <string name="voices">Voices</string>
+    <string name="midi_messages">MIDI messages</string>
+    <string name="reset_peaks">Reset peaks</string>
+    <string name="volume">Volume</string>
+    <string name="test_pads">Test pads</string>
+    <string name="all_notes_off">All notes off</string>
+    <string name="sound_m1">Sound: test electric piano (M1)</string>
+</resources>

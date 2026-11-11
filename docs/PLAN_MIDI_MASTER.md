@@ -2,7 +2,46 @@
 
 Midi Master (formerly Daloka) turns the owner's Youngmei **YM-928** (61 velocity keys, USB-MIDI out) on an Android phone into a sound module + arranger. The owner hears a **noticeable delay from key to sound** on the phone speaker and on an external speaker, and wants **several virtual instruments in one app**. This plan comes from a code audit and three research passes on 2026-11-11. Findings and sources are in `docs/RESEARCH_2026-11.md`.
 
-Next chat: read this file, get the owner's answers to §1, then start Phase 0.
+## 0. Owner decisions (2026-11-11) and the revised build order
+
+This section **overrides** §1, the web fixes in §2, and the WebView and JS-arranger parts of §3. The rest still applies as research and reference.
+
+| # | Decision |
+| --- | --- |
+| D1 | **Phone speaker only** in normal use, no Bluetooth. The delay is Chrome plus the app, so going native removes most of it. |
+| D2 | **Native only, web dropped.** The UI is rewritten in **Kotlin + Jetpack Compose**, with no WebView. GitHub Pages was **switched off on 2026-11-11**. The PWA already on the phone keeps running from its offline cache until the APK replaces it. |
+| D3 | Repo **renamed to `Wael9912/midi-master`** on 2026-11-11 (GitHub forwards the old links). The web app moved to `legacy-web/`. It is the **reference**: its 453 node tests and its parsers are the oracle the native code is tested against. |
+| D4 | **GPL-3.0-only.** |
+| D5 | **FluidR3Mono_GM.sf3** (MIT) is bundled. |
+| D6 | **GitHub Releases only** (APK), no Play Store. |
+| — | No backup button. The owner keeps the original SF2 / Yamaha / ORG files and re-imports them and the 8 setups by hand. |
+| — | **No measurement tasks for the owner** (OboeTester and recordings were dropped as too complex). The owner judges latency **by ear once the app is complete**. Check the audio path yourself: the stream line in `adb logcat -s MidiMaster` and the *Audio path* card. |
+| — | **The next chat builds the whole app**: M2, M3 and M4 in one go, so the owner gets a complete, playable arranger. |
+
+**Layout:** a Gradle project at the repo root.
+- `app/`: Kotlin + Compose UI, file import (SAF), settings and setups storage, the JNI bridge.
+- `engine/`: C++17. A pure core (synth, rack, later chord detection, sequencer, style parsers) builds and is tested on the desktop. `engine/android/` holds the Oboe + AMidi glue.
+- `legacy-web/`: the old app, frozen.
+
+**Why the arranger also goes native now:** it runs inside the audio callback, sample-accurate, so the old 200 ms look-ahead problem disappears. Chord changes apply on the next block.
+
+**Engine logic is C++ and is tested against JS output.** The style parsers (`sty.js`, `orgset.js`, `styledsl.js`), `chord.js` and the sequencer are ported to C++. A tool in `legacy-web/tools/` dumps the JS results (parsed events, detected chords, scheduled notes) to JSON fixtures. The C++ tests must reproduce them exactly.
+
+**Milestones:**
+1. **M1, first sound (latency spike):** Oboe stream (LowLatency, Exclusive, float, native rate, 2 bursts) and AMidi polled in the callback. One fast-attack voice. A Compose screen with the MIDI device, the audio path facts (rate, burst, buffer, exclusive, latency estimate) and test pads. Host tests include the "first audible sample ≤ 1 ms after note-on" rule. **Done 2026-11-11 (0.6.0).**
+2. **M2, sounds:** FluidSynth with FluidR3Mono bundled, the `synth.js` voices ported, the ORG sampler, SF2 / ORG import.
+3. **M3, arranger:** `chord.js`, sequencer, `styledsl` / `styles` (Sudanese + Western set), `sty.js`, `orgset.js` in C++, tested against the JS fixtures.
+4. **M4, main screen in Compose:** the phone-first rules from the web app (two pickers, transport, keys pinned to the bottom, Arabic RTL + English, 8 setups).
+5. **M5, rack** (§4). **M6, maqam tuning and Sudanese sounds** (§5).
+
+Web lessons that carry over as native rules:
+- ≤ 10 ms attack on the key parts;
+- trim the leading silence of samples at load;
+- decode or prepare samples before the first note;
+- keep the stream open and warm while in front;
+- no look-ahead limiter on the master (soft clip).
+
+Next chat: read §0, then build M2 → M3 → M4 to a complete app the owner can play (the latest `docs/CHANGELOG.md` entry says where work stopped).
 
 ## Where the delay comes from
 

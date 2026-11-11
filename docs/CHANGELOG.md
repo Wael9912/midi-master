@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0 — 2026-11-11 · native app, milestone M1 (first sound)
+- **Midi Master is now a native Android app** (owner decisions, `docs/PLAN_MIDI_MASTER.md` §0). Kotlin + Jetpack Compose UI, C++17 engine on **Oboe** (LowLatency, Exclusive, float, native rate, LatencyTuner, ADPF hint) with **AMidi read inside the audio callback**, so a key press never passes through Java/Kotlin. minSdk 29, package `io.github.wael9912.midimaster`.
+- M1 screen: the keyboard (auto-connects to the first USB MIDI device, reconnects on plug-in), an *Audio path* card (sample rate, burst, buffer, low-latency / exclusive / MMAP, output-latency estimate, MIDI hand-off avg/max, audio CPU peak, glitches, voices), volume, 8 test pads, all-notes-off. English + Arabic.
+- Sound: a two-operator FM test electric piano with a 1 ms attack, 32 voices, sustain pedal (CC64), and a soft clip on the master in place of a look-ahead limiter.
+- Engine core (`engine/core/`) builds and is tested on the desktop: first audible sample ≤ 1 ms after note-on at 44.1/48/96 kHz for every velocity and register, zero allocations on the audio path, release, sustain, voice stealing, sample bounds, MIDI parser (running status, real-time bytes, SysEx, split chunks), SPSC queue.
+- The web app moved to `legacy-web/` as the frozen reference (its 453 tests still pass there). GitHub Pages was switched off and the repo renamed to `Wael9912/midi-master`. CI now runs the web tests, the engine tests and the APK build.
+- Not yet tried on the phone with the YM-928. The owner will judge latency by ear once the app is complete; no OboeTester measurement.
+- **Next chat: the whole app.** M2 (FluidSynth + FluidR3Mono, the ported built-in voices, SF2 / ORG import), M3 (the arranger in C++, tested against the JS fixtures), M4 (the main screen in Compose, Arabic + English, 8 setups).
+
 ## 0.5.1 — 2026-11-11
 - **Renamed to Midi Master** (ميدي ماستر): title, home-screen name, start screen, install help, messages, one-file bundles (`dist/midi-master*.html`). Saved setups, banks and rhythm files carry over (the storage names did not change). The Sudanese rhythm *Daloka · Sayra* keeps its name.
 

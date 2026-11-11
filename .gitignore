@@ -1,3 +1,15 @@
 .certs/
 .DS_Store
 node_modules/
+# Android / Gradle / native
+.gradle/
+.kotlin/
+build/
+local.properties
+.cxx/
+.externalNativeBuild/
+captures/
+*.iml
+.idea/
+*.jks
+*.keystore
